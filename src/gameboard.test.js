@@ -1,6 +1,6 @@
 /* eslint-disable */
 import { Gameboard } from './gameboard';
-import { Ship } from './game';
+import { Ship } from './ship';
 
 test('placing a ship on the gameboard', () => {
   const gameboard = new Gameboard();
@@ -29,7 +29,6 @@ test('taking a hit', () => {
   expect(currentBoard[1][0]).toBe(null);
   gameboard.receiveAttack(1, 0);
   expect(currentBoard[1][0]).toBe('o');
-  const checkBoardAllSunk = gameboard.checkAllShipsSunk();
   expect(gameboard.checkAllShipsSunk()).toBe(false);
 
 });

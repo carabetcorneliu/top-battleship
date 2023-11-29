@@ -1,3 +1,4 @@
+import { Ship } from './ship';
 // eslint-disable-next-line import/prefer-default-export
 export class Gameboard {
   constructor() {
@@ -17,8 +18,11 @@ export class Gameboard {
   receiveAttack(x, y) {
     if (this.board[x][y] === null) {
       this.board[x][y] = 'o';
-    } else {
+      console.log(`Missed on r${x} c${y}`);
+    } else if (this.board[x][y] instanceof Ship && this.board[x][y] !== 'x') {
       this.board[x][y].hit();
+      this.board[x][y] = 'x';
+      console.log(`Ship got hit on r${x} c${y}`);
     }
   }
 
@@ -26,7 +30,7 @@ export class Gameboard {
     const currentBoard = this.board;
     for (let i = 0; i < currentBoard.length; i += 1) {
       for (let j = 0; j < currentBoard[i].length; j += 1) {
-        if (currentBoard[i][j] && !currentBoard[i][j].isSunk()) { return false; }
+        if (currentBoard[i][j] instanceof Ship) { return false; }
       }
     }
     return true;

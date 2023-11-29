@@ -1,4 +1,107 @@
 body {
   background-color: rgb(219, 216, 216);
+  display: flex;
+  justify-content: center;
+  background: url('./img/pngkit_wrinkled-paper-png_9463665.png');
 }
 
+.gameContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+
+.playerOneContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.shipsAndStateContainer {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+
+#refreshImg {
+  cursor: pointer;
+  width: 18px;
+  background-color: white;
+}
+
+.shipP1 {
+  background-color: rgb(130, 130, 247) !important;
+}
+
+.shipP2 {
+  background-color: rgb(247, 130, 237) !important;
+}
+
+#stateContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 37%;
+}
+
+.playerOneContainer, 
+#shipsLeftEnemy {
+  width: 50%;
+  padding: 7px 7px 7px 5px;
+  font-size: large;
+  color: white;
+  font-weight: bold;
+  background-color: rgb(88, 88, 88);
+}
+
+#shipsLeftEnemy {
+  background-color: rgb(255, 110, 110);
+}
+
+.Player-1,
+.Player-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.Player-1 > div,
+.Player-2 > div {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.c0,
+.c1,
+.c2,
+.c3,
+.c4,
+.c5,
+.c6,
+.c7,
+.c8,
+.c9 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(152, 153, 153);
+  width: 50px;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+  border: 1px solid rgb(83, 83, 83);
+}
+
+.Player-2 .c0:hover,
+.Player-2 .c1:hover,
+.Player-2 .c2:hover,
+.Player-2 .c3:hover,
+.Player-2 .c4:hover,
+.Player-2 .c5:hover,
+.Player-2 .c6:hover,
+.Player-2 .c7:hover,
+.Player-2 .c8:hover,
+.Player-2 .c9:hover {
+  background-color: rgb(247, 68, 68);
+}
